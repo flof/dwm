@@ -70,6 +70,7 @@ static const char *voldowncmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@"
 static const char *switchsink[] = { "switch-sink.sh", NULL };
 static const char *brupcmd[] = { "brightnessctl", "set", "+2%", NULL };
 static const char *brdowncmd[] = { "brightnessctl", "set", "2%-",  NULL };
+static const char *suspendcmd[] = { "systemctl", "suspend",  NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -112,6 +113,7 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_MonBrightnessUp,                  spawn,          {.v = brupcmd} },
 	{ 0,                            XF86XK_MonBrightnessDown,                spawn,          {.v = brdowncmd} },
 	{ MODKEY|ShiftMask,             XK_p,                                    spawn,          {.v = switchsink} },
+	{ MODKEY|ShiftMask,             XK_o,                                    spawn,          {.v = suspendcmd} },
 };
 
 /* button definitions */
